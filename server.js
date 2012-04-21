@@ -14,6 +14,8 @@ process.addListener('uncaughtException', function (err, stack) {
 	if (airbrake) { airbrake.notify(err); }
 });
 
+var http = require('http');  
+
 var connect = require('connect');
 var express = require('express');
 var assetManager = require('connect-assetmanager');
@@ -169,6 +171,14 @@ function NotFound(msg){
 	Error.captureStackTrace(this, arguments.callee);
 }
 
+//friend list
+app.get('/api/getFriendsList/:uid', function(req, res) {
+        var uid = req.params.uid;
+	res.render('apiFriendList', {'apiUri': uid});
+
+	//res.send(uid);
+});
+
 // Routing
 app.all('/', function(req, res) {
 	// Set example session uid for use with socket.io.
@@ -178,11 +188,6 @@ app.all('/', function(req, res) {
 	res.locals({
 		'key': 'value'
 	});
-	res.render('index');
-});
-
-//friend list
-app.get('/api/getFriendList', function(req, res) {
 	res.render('index');
 });
 
