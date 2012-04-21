@@ -14,7 +14,7 @@ process.addListener('uncaughtException', function (err, stack) {
 	if (airbrake) { airbrake.notify(err); }
 });
 
-var http = require('http');  
+var https = require('https');  
 
 var connect = require('connect');
 var express = require('express');
@@ -174,7 +174,20 @@ function NotFound(msg){
 //friend list
 app.get('/api/getFriendsList/:uid', function(req, res) {
         var uid = req.params.uid;
-	res.render('apiFriendList', {'apiUri': uid});
+	//res.render('apiFriendList', {'apiUri': uid});
+
+	var options = {  
+           host: 'graph.facebook.com',
+	   port: 443,	    
+           path: '/' + uid + '/friendlists?access_token=' + everyauth.facebook.accessToken;  
+	};   
+	var req = https.get(options, function(res) {  
+      		console.log("Got response: " + res.statusCode);   
+	      	res.on('data', function(chunk) {  
+           		console.log("Body: " + chunk);   
+			res.send(chunk);
+		});   
+	 });
 
 	//res.send(uid);
 });
