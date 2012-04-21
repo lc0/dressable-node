@@ -181,6 +181,11 @@ app.all('/', function(req, res) {
 	res.render('index');
 });
 
+//friend list
+app.get('/api/getFriendList', function(req, res) {
+	res.render('index');
+});
+
 // Initiate this after all other routing is done, otherwise wildcard will go crazy.
 var dummyHelpers = new DummyHelper(app);
 
