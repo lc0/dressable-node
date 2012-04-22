@@ -178,7 +178,7 @@ app.get('/api/getFriendsList/:uid/:token', function(req3, res) {
 
 	fbtool = require('./lib/facebook.js');
 	var result = fbtool.checkFacebookToken(uid, token);
-	console.log(result.data.id);
+	console.log(result.data[0].id);
 
 /*
 	var options = {  
