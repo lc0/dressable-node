@@ -172,23 +172,23 @@ function NotFound(msg){
 }
 
 //friend list
-app.get('/api/getFriendsList/:uid', function(req, res) {
-        var uid = req.params.uid;
-	//res.render('apiFriendList', {'apiUri': uid});
+app.get('/api/getFriendsList/:uid/:token', function(req3, res) {
+        var uid = req3.params.uid;
+	var token = req3.params.token;
 
 	var options = {  
            host: 'graph.facebook.com',
 	   port: 443,	    
-           path: '/' + uid + '/friendlists?access_token=' + everyauth.facebook.accessToken;  
-	};   
-	var req = https.get(options, function(res) {  
-      		console.log("Got response: " + res.statusCode);   
-	      	res.on('data', function(chunk) {  
+           path: '/' + uid + '/friendlists?access_token=' + token  
+	};
+
+	var req = https.get(options, function(res2) {  
+      		console.log("Got response: " + res2.statusCode);   
+	      	res2.on('data', function(chunk) {  
            		console.log("Body: " + chunk);   
 			res.send(chunk);
 		});   
 	 });
-
 	//res.send(uid);
 });
 
