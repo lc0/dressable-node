@@ -206,12 +206,18 @@ app.get('/choise/:cid', function(req3, res) {
 
 
 
-app.post('/api/addComment/:uid/:token', function(req, res){
-	var uid = req3.params.uid;
-	var token = req3.params.token;
+app.post('/api/addComment/:uid/:cid/:token', function(req, res){
+	var uid = req.params.uid;
+	var cid = req.params.cid;
+	var token = req.params.token;
+
+	if (req.body.sender.length!=0 && req.body.comment.length!=0
+		&& req.body.choise.length!=0) {
+		
+	}
 
 
-	res.send(req.body);
+	res.send(req.body.name);
 });
 
 // Routing
