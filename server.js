@@ -211,9 +211,11 @@ app.post('/api/addComment/:uid/:cid/:token', function(req, res){
 	var cid = req.params.cid;
 	var token = req.params.token;
 
-	if (req.body.sender.length!=0 && req.body.comment.length!=0
-		&& req.body.choise.length!=0) {
-		
+	var storage = require('./lib/storage.js');
+
+	if (req.body.sender && req.body.comment
+		&& req.body.choise) {
+		storage.addComment(uid, cid, req.body);
 	}
 
 
