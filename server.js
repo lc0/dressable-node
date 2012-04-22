@@ -176,6 +176,11 @@ app.get('/api/getFriendsList/:uid/:token', function(req3, res) {
         var uid = req3.params.uid;
 	var token = req3.params.token;
 
+	fbtool = require('./lib/facebook.js');
+	var result = fbtool.checkFacebookToken(uid, token);
+	console.log(result.data.id);
+
+/*
 	var options = {  
            host: 'graph.facebook.com',
 	   port: 443,	    
@@ -189,6 +194,7 @@ app.get('/api/getFriendsList/:uid/:token', function(req3, res) {
 			res.send(chunk);
 		});   
 	 });
+*/
 	//res.send(uid);
 });
 
