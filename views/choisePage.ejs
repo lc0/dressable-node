@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .like {
+	     background-image:url('/img/like-50.png');
+	     background-repeat:no-repeat
+    }
+    #up {
+      background-position: 0 0;
+    }
+    #down {
+      background-position: -50px 0;
+    }
+    
+    .liked {
+	     background-image:url('/img/like-20.png');
+	     background-repeat:no-repeat;
+	     width:20px;height:20px;
+    }
+    #upd {
+      background-position: 0 0;
+    }
+    #downd {
+      background-position: -20px 0;
+    }
+    
+    .avatar{ /* selector for avatar class*/
+    float: left; /* we press to the left edge, flow around on the right */
+    background: #fff; /* background */
+    width: 50px;
+    height: 50px;
+    padding: 5px; /* internal padding ( top, right, bottom, left) */
+    border: 1px solid #999; /* border(width, type, color) */
+    border-radius: 50%; /* border-radius is equal to 50 percent of a general width, actually 25 pixels, here and a circle was got(there is also with prefix - moz and - o) */
+    box-shadow: 0px 1px 1px 1px #bbb /* across displacement, vertical displacement, smearing, increase and color */
+}
+.avatar img:first-of-type{ /* selector for a picture which is "inside" the avatar class */
+    display: block; /* a picture is being displayed as a block, by a width it will be equal to the parent(in the div) */
+    width: 100%; /* width 100% */
+    border: 0; /* zero border */
+    margin: 0; /* external margin is lacking */
+    border-radius: 50%; /* read above */
+}
+.vote{
+  width:20px;margin-left:30px;margin-top:-30px;
+}
+.comment {
+padding-bottom:10px;
+}
+.comment div.span5 {
+padding: 10px;
+background-color: rgb(245,245,245);
+border-radius: 15px;
+}
+    </style>
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png">
+  </head>
+
+  <body>
+
+
+    <div class="container-fluid">
+      <div class="row">        
+        <div class="span8 offset2">
+          <div style="padding-bottom:0">
+            <img src="/img/man3.jpg" style="margin-left:5%;" />            
+          </div>
+          <div class="row" style="padding-bottom:30px;">
+            <div style="width:50px;height:50px;" class="span1 offset3 like" id="up"></div>
+            <div style="width:50px;height:50px;" class="span1 like" id="down"></div>
+            
+          </div>
+          
+          
+          <div class="row comment">
+            <div class="span1 offset1">
+              <div class="avatar"><img src="/img/avatar.jpg" />
+              <img src="/img/down-20.png" class="vote" />
+              </div>
+            </div>
+            <div class="span5">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</div>
+          </div>
+          
+          <div class="row comment">
+            <div class="span1 offset1">
+              <div class="avatar"><img src="../avatar.jpg" />
+              <img src="/img/down-20.png" class="vote" />
+              </div>
+            </div>
+            <div class="span5">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</div>
+          </div>
+          <div class="row comment">
+            <div class="span1 offset1">
+              <div class="avatar"><img src="../avatar.jpg" />
+              <img src="/img/up-20.png" class="vote" />
+              </div>
+            </div>
+            <div class="span5">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</div>
+          </div>
+          <div class="row comment">
+            <div class="span1 offset1">
+              <div class="avatar"><img src="../avatar.jpg" />
+              <img src="/img/up-20.png" class="vote" />
+              </div>
+            </div>
+            <div class="span5">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</div>
+          </div>
+          <div class="row comment">
+            <div class="span1 offset1">
+              <div class="avatar"><img src="../avatar.jpg" />
+              <img src="/img/up-20.png" class="vote" />
+              </div>
+            </div>
+            <div class="span5">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</div>
+          </div>
+          
+          
+          <div class="row">
+            <div class="span1 offset1">
+              <div class="avatar"><img src="/img/avatar.jpg" /></div>
+            </div>
+            <div class="span5"><textarea class="span5" placeholder="What do you think about"></textarea></div>
+          </div>
+          
+          
+          <div class="clear:both"></div>
+          
+          
+        </div><!--/span-->
+        
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <p>&copy; Dressable 2012</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+
+  </body>
+</html>

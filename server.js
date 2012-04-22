@@ -201,7 +201,7 @@ app.get('/api/getFriendsList/:uid/:token', function(req3, res) {
 app.get('/choise/:cid', function(req3, res) {
 	var cid = req3.params.cid;
 
-	res.render('choisePage');
+	res.render('choisePage', { layout : false } );
 });
 
 // Routing
