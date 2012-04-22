@@ -204,6 +204,16 @@ app.get('/choise/:cid', function(req3, res) {
 	res.render('choisePage', { layout : false } );
 });
 
+
+
+app.post('/api/addComment/:uid/:token', function(req, res){
+	var uid = req3.params.uid;
+	var token = req3.params.token;
+
+
+	res.send(req.body);
+});
+
 // Routing
 app.all('/', function(req, res) {
 	// Set example session uid for use with socket.io.
