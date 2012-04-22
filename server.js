@@ -198,6 +198,12 @@ app.get('/api/getFriendsList/:uid/:token', function(req3, res) {
 	//res.send(uid);
 });
 
+app.get('/choise/:cid', function(req3, res) {
+	var cid = req3.params.cid;
+
+	res.render('choisePage');
+});
+
 // Routing
 app.all('/', function(req, res) {
 	// Set example session uid for use with socket.io.
