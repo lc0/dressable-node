@@ -43,8 +43,8 @@
     .avatar{ /* selector for avatar class*/
     float: left; /* we press to the left edge, flow around on the right */
     background: #fff; /* background */
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     padding: 5px; /* internal padding ( top, right, bottom, left) */
     border: 1px solid #999; /* border(width, type, color) */
     border-radius: 50%; /* border-radius is equal to 50 percent of a general width, actually 25 pixels, here and a circle was got(there is also with prefix - moz and - o) */
@@ -144,7 +144,7 @@ border-radius: 15px;
           
           <div class="row comment">
             <div class="span1 offset1">
-              <div class="avatar"><img src="/img/avatar.jpg" /></div>
+              <div class="avatar"><img src="<%= ((session.auth && session.user.image) ? session.user.image : '/img/default.png') %>" /></div>
             </div>
             <div class="span5" style="background-color:#fff;"><textarea class="span5" placeholder="What do you think about"></textarea></div>
           </div>
