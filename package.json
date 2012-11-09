@@ -1,0 +1,19 @@
+{
+  "name": "nko3-brainscode",
+  "version": "0.0.0",
+  "description": "dressable",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nko3/brainscode.git"
+  },
+  "dependencies": {
+  },
+  "engines": {
+    "node": "0.8.x"
+  },
+  "subdomain": "brainscode.nko3"
+}
