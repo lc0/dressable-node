@@ -25,7 +25,14 @@ var DummyHelper = require('./lib/dummy-helper');
 
 // Session store
 var RedisStore = require('connect-redis')(express);
-var sessionStore = new RedisStore;
+
+var redis = require('redis');
+var client = redis.createClient(6379, 'nodejitsudb8460898653.redis.irstack.com');
+client.auth('nodejitsudb8460898653.redis.irstack.com:f327cfe980c971946e80b8e975fbebb4', function (err) {
+	if (err) { throw err; } 
+});
+console.log(redis);
+var sessionStore = new RedisStore(redis);
 
 var app = module.exports = express.createServer();
 app.listen(siteConf.port, null);
