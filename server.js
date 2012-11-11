@@ -14,7 +14,7 @@ process.addListener('uncaughtException', function (err, stack) {
 	if (airbrake) { airbrake.notify(err); }
 });
 
-var https = require('https');  
+var https = require('https');
 
 var connect = require('connect');
 var express = require('express');
@@ -29,7 +29,10 @@ var RedisStore = require('connect-redis')(express);
 var redis = require('redis');
 var client = redis.createClient(6379, 'nodejitsudb8460898653.redis.irstack.com');
 client.auth('nodejitsudb8460898653.redis.irstack.com:f327cfe980c971946e80b8e975fbebb4', function (err) {
-	if (err) { throw err; } 
+	if (err) {
+		//throw err;
+		console.log(err);
+	}
 });
 console.log(redis);
 var sessionStore = new RedisStore(redis);
@@ -116,7 +119,7 @@ app.configure(function() {
 
 	// Send notification to computer/phone @ visit. Good to use for specific events or low traffic sites.
 	if (siteConf.notifoAuth) {
-		app.use(notifoMiddleware(siteConf.notifoAuth, { 
+		app.use(notifoMiddleware(siteConf.notifoAuth, {
 			'filter': function(req, res, callback) {
 				callback(null, (!req.xhr && !(req.headers['x-real-ip'] || req.connection.remoteAddress).match(/192.168./)));
 			}
@@ -188,18 +191,18 @@ app.get('/api/getFriendsList/:uid/:token', function(req3, res) {
 	console.log(result);
 
 /*
-	var options = {  
+	var options = {
            host: 'graph.facebook.com',
-	   port: 443,	    
-           path: '/' + uid + '/friendlists?access_token=' + token  
+	   port: 443,
+           path: '/' + uid + '/friendlists?access_token=' + token
 	};
 
-	var req = https.get(options, function(res2) {  
-      		console.log("Got response: " + res2.statusCode);   
-	      	res2.on('data', function(chunk) {  
-           		console.log("Body: " + chunk);   
+	var req = https.get(options, function(res2) {
+      		console.log("Got response: " + res2.statusCode);
+	      	res2.on('data', function(chunk) {
+           		console.log("Body: " + chunk);
 			res.send(chunk);
-		});   
+		});
 	 });
 */
 	//res.send(uid);
