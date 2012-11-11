@@ -27,17 +27,22 @@ var DummyHelper = require('./lib/dummy-helper');
 var RedisStore = require('connect-redis')(express);
 
 var redis = require('redis');
-var redisAuth = siteConf.redis.auth.split(':');
+//var client = redis.createClient(6379, 'nodejitsudb8460898653.redis.irstack.com');
+//client.auth('nodejitsudb8460898653.redis.irstack.com:f327cfe980c971946e80b8e975fbebb4', function (err) {
+//        if (err) { throw err; }
+//});
+/*
+redisAuth = siteConf.redis.auth.split(':');
+var sessionStore = new RedisStore({"host":siteConf.redis.host, "db": redisAuth[0], "pass":redisAuth[1]}, function (err) {
+        if (err) { throw err; }
+        console.log('==============================');
+});
+console.log(sessionStore);
+*/
+var sessionStore = new RedisStore({'host':'brainscode.com'});
 
 var app = module.exports = express.createServer();
 app.listen(siteConf.port, null);
-
-var sessionStore = new RedisStore({
-                                    host: siteConf.redis.host,
-                                    port: siteConf.redis.port,
-                                    db: redisAuth[0],
-                                    pass: redisAuth[1]
-                                  });
 
 
 // Setup socket.io server
