@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # very first version of dressable
 
 It's not a production version of something just a playing around node.js and other interesting stuff, what I can't use in production projects
@@ -70,4 +69,3 @@ freenode, email us at <all@nodeknockout.com>, or tweet
 [3]: https://github.com/nko3/brainscode
 [4]: http://handbook.jit.su
 [5]: http://blog.nodeknockout.com/post/35279199042/introduction-to-jitsu-deployment
->>>>>>> add8c66906d4203cb05f7a276c2f1ef81f88ff3f
