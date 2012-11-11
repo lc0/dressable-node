@@ -15,9 +15,9 @@
 	})();
 
 	var socketIoClient = io.connect(null, {
-		'port': '#socketIoPort#'
-		, 'rememberTransport': true
-		, 'transports': ['websocket', 'xhr-multipart', 'xhr-polling', 'htmlfile', 'flashsocket']
+		'port': '#socketIoPort#',
+		'rememberTransport': true,
+		'transports': ['websocket', 'xhr-multipart', 'xhr-polling', 'htmlfile', 'flashsocket']
 	});
 	socketIoClient.on('connect', function () {
 		$$('#connected').addClass('on').find('strong').text('Online');
@@ -46,4 +46,13 @@
 	socketIoClient.on('disconnect', function() {
 		$$('#connected').removeClass('on').find('strong').text('Offline');
 	});
+
+	map = L.map('indexMap').setView([51.505, -0.09], 13);
+	L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+		}).addTo(map);
+
+
+
 })(jQuery);
