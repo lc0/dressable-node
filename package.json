@@ -1,7 +1,7 @@
 {
   "name": "dressable",
   "description": "A boilerplate used to quickly get projects going.",
-  "version": "0.0.2-17",
+  "version": "0.0.2-18",
   "author": "Sergii Khomenko <sergii@dressable.me>",
   "engines": [
     "node"
