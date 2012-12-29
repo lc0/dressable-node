@@ -1,11 +1,8 @@
 <input type="hidden" id="image" value="<%= ((session.auth && session.user && session.user.image) ? session.user.image : '/img/default.png') %>">
 <input type="hidden" id="service" value="<%= (session.auth && session.auth.github) ? '//github.com/favicon.ico' : '' %><%= (session.auth && session.auth.twitter) ? '//twitter.com/favicon.ico' : '' %><%= (session.auth && session.auth.facebook) ? '//facebook.com/favicon.ico' : '' %>">
-<div id="bubble">
-	<ul></ul>
-</div>
 <div id="indexMap"></div>
 <div id="connected">
-	<strong>Online</strong>
+	<strong>Offline</strong>
 	<div class="overlay"></div>
 </div>
 <div class="logins">
@@ -44,5 +41,8 @@
 			<p>
 				Here will be a list of your last advices, dialogs with your friends and a list of places, that you share with friends.
 			</p>
+<div id="bubble">
+	<ul></ul>
+</div>
 	<% } %>
 </div>

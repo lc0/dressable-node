@@ -30,20 +30,20 @@
 		if (service) {
 			$li.append($('<img class="service">').attr('src', service));
 		}
-/*
+//*
 		$$('#bubble ul').prepend($li);
 		$$('#bubble').scrollTop(98).stop().animate({
 			'scrollTop': '0'
 		}, 500);
-		setTimeout(function() {
+/*		setTimeout(function() {
 			$li.remove();
 		}, 5000);
-
+*/
 		setTimeout(function() {
 			socketIoClient.send('pong');
 		}, 1000);
 
-*/
+//*/
 	});
 
 	socketIoClient.on('disconnect', function() {
