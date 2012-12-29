@@ -18,7 +18,7 @@ html{
 */
 /*
 	TODO test putting a class on HEAD.
-		- Fails on FF. 
+		- Fails on FF.
 */
 body,
 div,
@@ -89,7 +89,7 @@ h4,
 h5,
 h6 {
 	font-size:100%;
-	font-weight:normal;
+	/*font-weight:normal;*/
 }
 q:before,
 q:after {

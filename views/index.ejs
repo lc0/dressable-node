@@ -1,9 +1,5 @@
-<input type="hidden" id="image" value="<%= ((session.auth && session.user.image) ? session.user.image : '/img/default.png') %>">
-<input type="hidden" id="service" value="
-	<%= (session.auth && session.auth.github) ? '//github.com/favicon.ico' : '' %>
-	<%= (session.auth && session.auth.twitter) ? '//twitter.com/favicon.ico' : '' %>
-	<%= (session.auth && session.auth.facebook) ? '//facebook.com/favicon.ico' : '' %>
-">
+<input type="hidden" id="image" value="<%= ((session.auth && session.user && session.user.image) ? session.user.image : '/img/default.png') %>">
+<input type="hidden" id="service" value="<%= (session.auth && session.auth.github) ? '//github.com/favicon.ico' : '' %><%= (session.auth && session.auth.twitter) ? '//twitter.com/favicon.ico' : '' %><%= (session.auth && session.auth.facebook) ? '//facebook.com/favicon.ico' : '' %>">
 <div id="bubble">
 	<ul></ul>
 </div>
@@ -13,7 +9,7 @@
 	<div class="overlay"></div>
 </div>
 <div class="logins">
-	<iframe src="http://nodeknockout.com/iframe/brainscode" frameborder=0 scrolling=no allowtransparency=true width=115 height=25></iframe>
+	<iframe src="http://nodeknockout.com/iframe/brainscode" frameborder=0 scrolling=no allowtransparency=true width=115 height=25 style="background-color:#eee; border-radius: 3px;"></iframe>
 	<ul class="padding">
 		<% if(!session.auth) {%>
 			<li class="facebook"><a href="/auth/facebook"><img src="//facebook.com/favicon.ico" alt="">Facebook</a></li>
@@ -26,4 +22,27 @@
 
 <br /><br />
 <a href="/choise/1"><h1 style="color:white">Here is an example how people can get advice</h1></a>
+</div>
+
+<div class="container">
+	<% if(!session.auth) {%>
+		<h2>The project name is <a href="//dressabme.me">Dressable</a>.</h2>
+
+		<p>The main idea is to simplify shopping process and try to solve some problems, that appear when you are at a shop and would like to buy something.</p>
+		<p> Two main causes are: you see something and you are sure, that you want to buy exactly this product, and exactly today. Meanwhile, it's very rare situation when people are so sure about something. Usually, they are looking for some ideas how to make a choice.</p>
+		<p> To solve this problem you can do shopping with your close friend, or with a boyfriend/girlfriend, or try to ask people in shop, or try to bring some fashion expert with you, even ask your parent for some certain age time frames. Some people can try to send MMS, or to call to someone and try to describe, what they are interested to buy.</p>
+
+		<p>Also I'm looking for some strong UI/UX iOS guys, who can help me to build this.</p>
+
+		<p>Follow us on <a href="//twitter.com/dressable_me">twitter</a> and <a href="//facebook.com/dressable">facebook.com/dressable</a>. Also you can sign up for news on <a href="http://dressable.me">dressable.me</a></p>
+
+		<p>Developed for fun and further big improvements by <a style="padding-top:30px;" href="https://twitter.com/intent/tweet?screen_name=lc0d3r">@lc0d3r</a> and <a href="mailto:sergii@dressable.me">sergii@dressable.me</a></p>
+
+	<% } else { %>
+		<img src="<%= session.user.image.replace('_q.jpg','_n.jpg') %> " />
+		<h2>Welcome back <%= ((session.auth && session.user) ? session.user.name : 'user') %>!</h2>
+			<p>
+				Here will be a list of your last advices, dialogs with your friends and a list of places, that you share with friends.
+			</p>
+	<% } %>
 </div>

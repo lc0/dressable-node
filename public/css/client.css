@@ -16,6 +16,9 @@ a {
 	color: #000;
 	text-decoration: none;
 }
+p {
+	margin-top: 10px;
+}
 a:hover {
 	text-decoration: underline;
 }
@@ -145,4 +148,21 @@ strong {
 	height: 300px;
 	margin-top:0;
 	min-height: 100%;
+}
+.container {
+	width: 50%;
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	background-color: rgba(229, 229, 229, 0.75);
+	border-radius: 20px;
+	padding: 20px;
+	text-align: justify;
+	text-rendering: optimizeLegibility;
+	font: 16px/22px 'GeogrotesqueRegular', Arial, Helvetica, sans-serif;
+	box-shadow: 0 0 20px rgba(0,0,0,0.6);
+}
+.container a {
+	font-weight: bold;
+	border-bottom: 2px dotted #69f9a9;
 }

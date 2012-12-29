@@ -56,10 +56,12 @@ var assetsSettings = {
 		, 'dataType': 'javascript'
 		, 'files': [
 			'http://code.jquery.com/jquery-latest.js'
-			, siteConf.uri+'/socket.io/socket.io.js' // special case since the socket.io module serves its own js
+			//, siteConf.uri+'/socket.io/socket.io.js' // special case since the socket.io module serves its own js
+			, 'socket.io.js'
 			, 'jquery.client.js'
 		]
 		, 'debug': true
+/*
 		, 'postManipulate': {
 			'^': [
 				assetHandler.uglifyJsOptimize
@@ -68,6 +70,7 @@ var assetsSettings = {
 				}
 			]
 		}
+*/
 	}
 	, 'css': {
 		'route': /\/static\/css\/[a-z0-9]+\/.*\.css/
@@ -92,12 +95,14 @@ var assetsSettings = {
 app.configure('development', function(){
 	assetsSettings.js.files.push('jquery.frontend-development.js');
 	assetsSettings.css.files.push('frontend-development.css');
+/*
 	[['js', 'updatedContent'], ['css', 'updatedCss']].forEach(function(group) {
 		assetsSettings[group[0]].postManipulate['^'].push(function triggerUpdate(file, path, index, isLast, callback) {
 			callback(file);
 			dummyHelpers[group[1]]();
 		});
 	});
+*/
 });
 
 var assetsMiddleware = assetManager(assetsSettings);
