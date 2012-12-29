@@ -61,16 +61,17 @@ var assetsSettings = {
 			, 'jquery.client.js'
 		]
 		, 'debug': true
-/*
-		, 'postManipulate': {
+		/*, 'postManipulate': {
 			'^': [
 				assetHandler.uglifyJsOptimize
-				, function insertSocketIoPort(file, path, index, isLast, callback) {
+				, function insertSocketIoPorti(file, path, index, isLast, callback) {
+					console.log(siteConf.port);
+					console.log(file);
 					callback(file.replace(/.#socketIoPort#./, siteConf.port));
 				}
 			]
-		}
-*/
+		}*/
+
 	}
 	, 'css': {
 		'route': /\/static\/css\/[a-z0-9]+\/.*\.css/

@@ -15,7 +15,7 @@
 	})();
 
 	var socketIoClient = io.connect(null, {
-		'port': '#socketIoPort#',
+		'port': 8091,
 		'rememberTransport': true,
 		'transports': ['websocket', 'xhr-multipart', 'xhr-polling', 'htmlfile', 'flashsocket']
 	});
