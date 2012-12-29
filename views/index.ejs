@@ -6,12 +6,11 @@
 	<div class="overlay"></div>
 </div>
 <div class="logins">
-	<iframe src="http://nodeknockout.com/iframe/brainscode" frameborder=0 scrolling=no allowtransparency=true width=115 height=25 style="background-color:#eee; border-radius: 3px;"></iframe>
 	<ul class="padding">
 		<% if(!session.auth) {%>
 			<li class="facebook"><a href="/auth/facebook"><img src="//facebook.com/favicon.ico" alt="">Facebook</a></li>
 			<li class="twitter"><a href="/auth/twitter"><img src="//twitter.com/favicon.ico" alt="">Twitter</a></li>
-			<li class="github"><a href="/auth/github"><img src="//github.com/favicon.ico" alt="">Github</a></li>
+			<!--li class="github"><a href="/auth/github"><img src="//github.com/favicon.ico" alt="">Github</a></li-->
 		<% } else { %>
 			<li class="logout"><a href="/logout">Logout</a></li>
 		<% } %>
